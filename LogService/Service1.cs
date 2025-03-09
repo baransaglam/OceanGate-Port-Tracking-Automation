@@ -28,7 +28,7 @@ namespace LogService
         private void TimerElapsed(object sender, ElapsedEventArgs e)
         {           
             _logManager.LogAction("Service is running...", "ServiceLog");
-            Console.WriteLine(LogManager.logFilePath);  
+            Console.WriteLine(LogManager.logFilePath);  pu9hjıok
         }
 
         protected override void OnStop()
