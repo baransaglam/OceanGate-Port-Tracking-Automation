@@ -43,11 +43,3 @@ Bu sistem ile **kullanıcı işlemleri, kargo yönetimi, gemi işlemleri, liman 
 3. **Gemileri ve Kargoları Takip Edin**: Limana gelen gemileri ve taşıdıkları yükleri yönetin.
 4. **Raporlar ve Analizler**: Liman hareketlerini detaylı raporlayın.
 
-## 🤝 Katkıda Bulunma
-Eğer projeye katkıda bulunmak isterseniz, lütfen bir **pull request** oluşturun veya **issue** açın. 
-
-## 📜 Lisans
-Bu proje **MIT Lisansı** altında lisanslanmıştır.
-
----
-Bu projeyi beğendiyseniz ⭐ vererek destek olabilirsiniz!
