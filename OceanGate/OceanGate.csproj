@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21706D61-FAB3-44C6-B324-CD39C9615432}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OceanGate</RootNamespace>
+    <AssemblyName>OceanGate</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.9.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.9.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=9.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.9.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=112.1.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.112.1.0\lib\net471\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.CodeDom, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.CodeDom.8.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.4, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.8.0.4\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCargoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddCargoControl.Designer.cs">
+      <DependentUpon>AddCargoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddHarborControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddHarborControl.Designer.cs">
+      <DependentUpon>AddHarborControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddShipControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddShipControl.Designer.cs">
+      <DependentUpon>AddShipControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddUserControl1.Designer.cs">
+      <DependentUpon>AddUserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalystForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalystForm.Designer.cs">
+      <DependentUpon>AnalystForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CaptchaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaptchaForm.Designer.cs">
+      <DependentUpon>CaptchaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CargoReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CargoReportControl.Designer.cs">
+      <DependentUpon>CargoReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\tcKimlikDogrula\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteCargoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteCargoControl.Designer.cs">
+      <DependentUpon>DeleteCargoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteHarborControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteHarborControl.Designer.cs">
+      <DependentUpon>DeleteHarborControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteShipControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteShipControl.Designer.cs">
+      <DependentUpon>DeleteShipControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteUserControl1.Designer.cs">
+      <DependentUpon>DeleteUserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditCargoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditCargoControl.Designer.cs">
+      <DependentUpon>EditCargoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditHarborControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditHarborControl.Designer.cs">
+      <DependentUpon>EditHarborControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditShipControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditShipControl.Designer.cs">
+      <DependentUpon>EditShipControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditUserControl1.Designer.cs">
+      <DependentUpon>EditUserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryOverviewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InventoryOverviewControl.Designer.cs">
+      <DependentUpon>InventoryOverviewControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KullaniciKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KullaniciKayit.Designer.cs">
+      <DependentUpon>KullaniciKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LogControl.Designer.cs">
+      <DependentUpon>LogControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager.Designer.cs">
+      <DependentUpon>Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanGateDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OceanGateDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OceanGateDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OceanGateDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OperatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperatorForm.Designer.cs">
+      <DependentUpon>OperatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PortReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PortReportControl.Designer.cs">
+      <DependentUpon>PortReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShipReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ShipReportControl.Designer.cs">
+      <DependentUpon>ShipReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UserReportControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserReportControl.Designer.cs">
+      <DependentUpon>UserReportControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ScheduleShipController.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ScheduleShipController.Designer.cs">
+      <DependentUpon>ScheduleShipController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewHarborControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewHarborControl.Designer.cs">
+      <DependentUpon>ViewHarborControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewShipsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewShipsControl.Designer.cs">
+      <DependentUpon>ViewShipsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewUserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewUserControl1.Designer.cs">
+      <DependentUpon>ViewUserControl1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddCargoControl.resx">
+      <DependentUpon>AddCargoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddHarborControl.resx">
+      <DependentUpon>AddHarborControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddShipControl.resx">
+      <DependentUpon>AddShipControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUserControl1.resx">
+      <DependentUpon>AddUserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalystForm.resx">
+      <DependentUpon>AnalystForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaptchaForm.resx">
+      <DependentUpon>CaptchaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CargoReport.rdlc" />
+    <EmbeddedResource Include="CargoReportControl.resx">
+      <DependentUpon>CargoReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteCargoControl.resx">
+      <DependentUpon>DeleteCargoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteHarborControl.resx">
+      <DependentUpon>DeleteHarborControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteShipControl.resx">
+      <DependentUpon>DeleteShipControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteUserControl1.resx">
+      <DependentUpon>DeleteUserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCargoControl.resx">
+      <DependentUpon>EditCargoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditHarborControl.resx">
+      <DependentUpon>EditHarborControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditShipControl.resx">
+      <DependentUpon>EditShipControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUserControl1.resx">
+      <DependentUpon>EditUserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryOverviewControl.resx">
+      <DependentUpon>InventoryOverviewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KullaniciKayit.resx">
+      <DependentUpon>KullaniciKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogControl.resx">
+      <DependentUpon>LogControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PortReport.rdlc" />
+    <EmbeddedResource Include="PortReportControl.resx">
+      <DependentUpon>PortReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShipReport.rdlc" />
+    <EmbeddedResource Include="ShipReportControl.resx">
+      <DependentUpon>ShipReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserReportControl.resx">
+      <DependentUpon>UserReportControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScheduleShipController.resx">
+      <DependentUpon>ScheduleShipController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersReport.rdlc" />
+    <EmbeddedResource Include="ViewHarborControl.resx">
+      <DependentUpon>ViewHarborControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewShipsControl.resx">
+      <DependentUpon>ViewShipsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewUserControl1.resx">
+      <DependentUpon>ViewUserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\tcKimlikDogrula\kpspublic.wsdl" />
+    <None Include="Connected Services\tcKimlikDogrula\OceanGate.tcKimlikDogrula.TCKimlikNoDogrulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="OceanGateDBDataSet.xsc">
+      <DependentUpon>OceanGateDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OceanGateDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OceanGateDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OceanGateDBDataSet.xss">
+      <DependentUpon>OceanGateDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OceanGateDBDataSet1.xsc">
+      <DependentUpon>OceanGateDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OceanGateDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OceanGateDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OceanGateDBDataSet1.xss">
+      <DependentUpon>OceanGateDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anchor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-anchor-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-anchor-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-50 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-password-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-user-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-identity-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-mail-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{5e41f1d1-b12e-4f19-afb9-33ad05d38f10}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{442EC85B-DCA3-474A-B669-7CD3ACA40875}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-port-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-port-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-location-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-storage-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Connected Services\tcKimlikDogrula\configuration91.svcinfo" />
+    <None Include="Connected Services\tcKimlikDogrula\configuration.svcinfo" />
+    <None Include="Connected Services\tcKimlikDogrula\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="map.html" />
+    <None Include="Resources\icons8-search-30 %281%292.png" />
+    <None Include="Resources\icons8-search-301.png" />
+    <None Include="Resources\icons8-search-30 %281%291.png" />
+    <None Include="Resources\icons8-search-30 %281%29.png" />
+    <None Include="Resources\icons8-search-30.png" />
+    <None Include="Resources\icons8-search-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\tcKimlikDogrula\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
+</Project>

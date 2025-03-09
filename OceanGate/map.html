@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Harita Konum Seçici</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Harita Üzerinden Liman Konumunu Seçin</h3>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        var map = L.map("map").setView([0, 0], 2);
+
+        // OpenStreetMap tile'larını harita üzerine ekliyoruz
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors",
+        }).addTo(map);
+
+        // Harita üzerine tıklanabilir bir işaretçi ekliyoruz
+        var marker;
+
+        // Haritaya işaretçi yerleştirme ve yakınlaştırma
+        function setMarkerAndZoom(lat, lon) {
+            if (marker) {
+                map.removeLayer(marker);  // Remove existing marker
+            }
+
+            // Create a new marker and add it to the map
+            marker = L.marker([lat, lon]).addTo(map);
+
+            // Set the view to the new coordinates with zoom level 13
+            map.setView([lat, lon], 13);
+        }
+
+        // Harita üzerindeki tıklama olayını dinliyoruz
+        map.on("click", function (e) {
+            var lat = e.latlng.lat; // Latitude
+            var lon = e.latlng.lng; // Longitude
+
+            // Daha önce eklenmiş marker varsa kaldırıyoruz
+            if (marker) {
+                map.removeLayer(marker);
+            }
+
+            // Yeni marker'ı haritaya ekliyoruz
+            marker = L.marker([lat, lon]).addTo(map);
+
+            // Konumu web sayfasına gönderiyoruz (C# tarafına)
+            window.external.SetLocation(lat, lon);
+        });
+    </script>
+</body>
+</html>
