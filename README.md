@@ -1,6 +1,6 @@
 # OceanGate - Liman Takip ve Yönetim Sistemi
 
-![OceanGate Logo](docs/logo.png)
+<img src="OG-Images/OGLOGO1.png" alt="" width="350">
 
 **OceanGate**, limanların verimli yönetilmesi için geliştirilmiş bir **C# Windows Forms** projesidir. 
 Bu sistem ile **kullanıcı işlemleri, kargo yönetimi, gemi işlemleri, liman bilgileri, koordinat bazlı liman ekleme ve detaylı raporlama** gibi birçok işlemi gerçekleştirebilirsiniz.
